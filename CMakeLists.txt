@@ -1,0 +1,20 @@
+﻿MESSAGE(STATUS "ETSIDICT: Creando la librería y los ejemplos")
+
+
+#SET(curdir ${CMAKE_CURRENT_SOURCE_DIR}/src)
+#INCLUDE_DIRECTORIES(${curdir}/include) 
+
+
+FILE(GLOB_RECURSE SOURCES *.cpp) 
+FILE(GLOB_RECURSE HEADERS *.h)
+SET(SOURCES ${SOURCES} ${child_sources})
+SET(HEADERS ${HEADERS} ${child_headers})
+SOURCE_GROUP("LIB_SRC" FILES ${SOURCES} ${HEADERS}) 
+
+# ETSIDict library
+ADD_LIBRARY(ETSIDict STATIC ${SOURCES} ${HEADERS} )
+
+ADD_SUBDIRECTORY(data)
+ADD_SUBDIRECTORY(example)
+
+
