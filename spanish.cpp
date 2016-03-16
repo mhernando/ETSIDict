@@ -4,6 +4,8 @@
 #include "mock_file.h"
 #include "ES_dict.h"
 #include <iostream>
+#include <string>
+using std::string;
 Spanish::Spanish(){
 	pMS = new MySpell(&aff_ES_dict_file,&dic_ES_dict_file);
 	if(0){
@@ -24,8 +26,19 @@ bool Spanish::check(const char *word){
 }
 bool Spanish::check(const char *init, int n)
 {
-	if(n>=MAX_WORD_SIZE)return false;
+	char aux_word[2000];
+	if(n>=2000)return false;
 	strncpy(aux_word,init,n);
 	aux_word[n]='\0';
 	return check(aux_word);
+}
+
+bool Spanish::check(const string &word)
+{
+	return check(word.c_str());
+}
+
+bool Spanish::check(const string &line, int ini, int num)
+{
+	return check(line.substr(ini,num).c_str());
 }

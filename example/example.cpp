@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-#include "lib/ETSIDICT.h"
+#include "../lib/ETSIDICT.h"
 const char *test[]={
 "escucha",
 "Escuchando",

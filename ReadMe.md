@@ -39,3 +39,33 @@ void main()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
+
+There are four check methods:
+
+-   **bool check(const char \*word);**
+
+    UTF-8 const char \*word (null terminated). true if the word is found at the
+    dictionary
+
+-   **bool check(const char \*init, int n);**
+
+    UTF-8 const char \*substring. true if a substring of n chars belongs to the
+    dictionary
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       diccionario.check(”Holaamigo”,4) would be true, false for any other number
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-   **bool check(const string \&word);**
+
+    UTF-8 std::string. true if the word is Spanish
+
+-   **bool check(const string &line, int ini, int num);**
+
+UTF-8 std::string subtring that begin at the character in position ini and has a
+num lenght
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+string mystring(”Holaamigo”);
+diccionario.check(mystring,4,5) //true (substring “Hola”)        diccionario.check(mystring,0,4) //true (substring “amigo”)   diccionario.check(mystring,4,1) //true (substring “a”)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
